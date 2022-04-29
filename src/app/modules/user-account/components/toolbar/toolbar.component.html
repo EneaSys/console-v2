@@ -1,0 +1,10 @@
+<p-toolbar>
+    <div class="p-toolbar-group-left">
+        Benvenuto {{ userInfo.email }}!
+    </div>
+    
+    <div class="p-toolbar-group-right">
+		<code>{{ userInfo.username }}</code>
+        <p-button icon="pi pi-sign-out" styleClass="p-button-danger" (click)="logout()"></p-button>
+    </div>
+</p-toolbar>
