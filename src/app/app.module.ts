@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 
 import { MainModule } from './modules/main/main.module';
 import { UserAccountModule } from './modules/user-account/user-account.module';
-import { RegistrationModule } from './modules/registration/registration.module';
+import { ApiPigesDnaModule, PIGES_DNA_PATH } from 'piges-dna';
 
 @NgModule({
 	declarations: [
@@ -25,10 +25,18 @@ import { RegistrationModule } from './modules/registration/registration.module';
 
 		MainModule,
 		UserAccountModule,
-		RegistrationModule,
-		
+
+		ApiPigesDnaModule,
+
 	],
-	providers: [],
+	providers: [
+		/*
+		{
+            provide: PIGES_DNA_PATH,
+            useValue: "http://localhost:9081"
+        },
+		*/
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

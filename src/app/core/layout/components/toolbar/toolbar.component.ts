@@ -2,16 +2,16 @@ import { Component } from '@angular/core';
 import { PigesAuthService } from '@piges/auth-angular';
 
 @Component({
-  selector: 'pagina-2-component',
-  templateUrl: './pagina-2.component.html',
-  styleUrls: ['./pagina-2.component.scss']
+	selector: 'ea-toolbar',
+	templateUrl: './toolbar.component.html',
+	styleUrls: ['./toolbar.component.scss']
 })
-export class Pagina2Component {
+export class ToolbarComponent {
 	constructor(
 		private pigesAuthService: PigesAuthService,
-	) {}
+	) { }
 
-	userInfo: any;
+	userInfo: any = {};
 
 	ngOnInit(): void {
 		this.loadUser();
@@ -21,4 +21,7 @@ export class Pagina2Component {
 		this.userInfo = await this.pigesAuthService.getUser();
 	}
 
+	async logout() {
+		await this.pigesAuthService.logout("https://account.eneasys.com/logout");
+	}
 }

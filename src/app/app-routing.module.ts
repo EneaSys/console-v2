@@ -2,27 +2,39 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PigesAuthGuard } from '@piges/auth-angular';
 import { Page404Component } from './core/layout/components/page-404/page-404.component';
-import { EneasysAccountHomeComponent } from './modules/main/components/home/home.component';
-import { RegistrationStep1Component } from './modules/registration/component/registration-step-1/registration-step-1.component';
+import { EneasysConsolePageComponent } from './core/layout/components/page/page.component';
 import { UserHomeComponent } from './modules/user-account/components/user-home/user-home.component';
 
 
 const routes: Routes = [
 	{
 		path: '',
-		component: EneasysAccountHomeComponent,
-	},
-	{
-		path: 'register',
-		component: RegistrationStep1Component,
-	},
-	{
-		path: 'my',
 		canActivate : [
 			PigesAuthGuard
 		],
 		component: UserHomeComponent,
 	},
+	{
+        path: 'piges-module',
+		component  : EneasysConsolePageComponent,
+		//data: { layout: 'test' },
+		canActivate : [
+			PigesAuthGuard
+		],
+        children   : [
+            {path: '', loadChildren: () => import('src/app/modules/piges-module-manager/piges-module-manager.module').then(m => m.PigesModuleManagerModule)},
+        ]
+    },
+	{
+        path: 'piges-organization',
+		component  : EneasysConsolePageComponent,
+		canActivate : [
+			PigesAuthGuard
+		],
+        children   : [
+            {path: '', loadChildren: () => import('src/app/modules/piges-organization-adm/piges-organization-adm.module').then(m => m.PigesOrganizationAdmModule)},
+        ]
+    },
 	{
 		path: '**',
 		pathMatch: 'full', 

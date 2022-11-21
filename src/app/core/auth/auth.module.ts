@@ -5,19 +5,11 @@ import { PigesAuthLoginComponent, PigesAuthCallbackComponent } from '@piges/auth
 import { RouterModule, Routes } from '@angular/router';
 import { IPigesConfig } from '@piges/auth-angular/lib/interface/piges-config';
 
-/*
-const pigesConfig = {
+const pigesConfig: IPigesConfig  = {
 	clientId: '128bmgj51ol95sokf4uopafs5r',
 	redirectUrl: APP_URL + '/piges/auth/callback',
 	idp_identifier: 'eneasys.com'
-}*/
-const pigesConfig: IPigesConfig  = {
-	_serverUrl: 'https://eneasys.auth.eu-west-1.amazoncognito.com',
-	_authorizeUrl: 'https://eneasys.auth.eu-west-1.amazoncognito.com',
-	clientId: '5jkgg56luoku9q8vgdhalc3uaj',
-	redirectUrl: APP_URL + '/piges/auth/callback'
 }
-
 
 const pigesAuthRoutes: Routes = [
 	{

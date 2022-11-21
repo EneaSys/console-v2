@@ -1,0 +1,56 @@
+#body {
+	position: absolute;
+	
+	height: 100%;
+	width: 100%;
+
+	background-image: url("/assets/bg.webp") ;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	#top-menu-wrapper {
+		width: 100%;
+	}
+
+	#left-menu-wrapper {
+		width: 15%;
+	}
+
+	#content-wrapper {
+		width: 85%;
+	}
+
+
+
+
+
+
+
+
+	.page-t1 {
+		padding: 8px;
+	}
+
+	.card {
+		box-shadow: 0 0 5px gray;
+		margin: 24px
+	}
+	.card-title {
+		background-color: #eaeded;
+		padding: 8px;
+		border-bottom: 1px lightgray solid;
+		font-size: large;
+		font-weight: bold;
+	}
+	.card-content {
+		background-color: white;
+		padding-bottom: 10px;
+	}
+	
+	
+
+	.p8 {
+		padding: 8px;
+	}
+}

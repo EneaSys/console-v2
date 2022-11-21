@@ -22,7 +22,8 @@ export class UserToolbarComponent {
 		this.userInfo = await this.pigesAuthService.getUser();
 	}
 
-	logout() {
-		this.pigesAuthService.logout(APP_URL);
+	async logout() {
+		await this.pigesAuthService.logout(APP_URL);
+		window.location.href = "https://account.eneasys.com/logout";
 	}
 }

@@ -1,0 +1,13 @@
+<div id="body" fxLayout="column" fxLayoutAlign="top">
+	<div fxLayout="row">
+		<ea-toolbar id="top-menu-wrapper"></ea-toolbar>
+	</div>
+	<div fxLayout="row" fxLayoutAlign="center">
+		<div id="left-menu-wrapper" fxLayout="column" fxLayoutAlign=" center" class="p8">
+			<escc-left-menu></escc-left-menu>
+		</div>
+		<div id="content-wrapper" fxLayout="column">
+			<router-outlet *ngIf="true"></router-outlet>
+		</div>
+	</div>
+</div>
